@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="dataSourceStorageLocal">
+    <data-source name="PostgreSQL - covisco_development@localhost" uuid="f147aa68-cba3-40ee-9b9d-211b0cbd363f">
+      <secret-storage>memory</secret-storage>
+      <schema-pattern>covisco_development.*</schema-pattern>
+      <default-schemas>covisco_development.*</default-schemas>
+    </data-source>
+  </component>
+</project>
