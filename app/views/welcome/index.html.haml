@@ -1,1 +1,99 @@
-%h1 Hello World
+#home.item.active
+  %h4 What's CoVis CoWorking?
+  %p
+    CoVis CoWorking is a coworking space in Omaha, Nebraska.
+    Whether you work at home or spend your days hopping from coffee shop to coffee shop, CoVis welcomes all who seek growth.
+  %p
+    CoVis is here to help encourage your professional and social growth. You know, the
+    %i good
+    growths! Not the kind you see a doctor about.
+    People help you grow; they share ideas, opinions, inspiration, and can be the catalyst needed to jump-start your creativity.
+    Best of all, people need you too! You're an expert in what you do, so why not help others and be a part of something bigger?
+  %h4 Who is CoVis CoWorking for?
+  %p CoVis CoWorking is open to creatives in any industry that allows you to work remotely. It's for Developers, Designers, Real Estate Agents, Accountants, and more! Basically, if you're looking to get away from your office or home-office, and you're able to work peacefully with others, this is probably the place for you!
+  %h4 Where is CoVis CoWorking located?
+  %div{:style => "width:300px; float:left; padding-right:10px;"}
+    = link_to image_tag('googlemaps.png'), 'http://g.co/maps/njpdk'
+  %p
+    CoVis is conveniently located close to the Pacific Street and I-680 exit. A pretty awesome location and some great neighbors to boot! Who are our neighbors?
+    Well, on one side is
+    %a{:href => "http://www.minuteman.biz/"} MinuteMan Printing
+    to handle any printing needs that come up; On the other side is a massage parlor!
+    %br/
+    = succeed "Twenty" do
+      %br/
+    paces or so is the awesome
+    %a{:href => "http://twistedcorkbistro.com/"} Twisted Cork Bistro
+    and even a
+    %a{:href => "http://www.subway.com/subwayroot/default.aspx"} Subway
+    if you're looking to "Eat Fresh."
+    If that's not enough, just cross the street and try out
+    = succeed "," do
+      %a{:href => "http://ingredientrestaurant.com/locations/omahaPacific.htm"} ingredient
+    = succeed "," do
+      %a{:href => "http://www.redmangousa.com/"} Red Mango
+    or even buy your own groceries at
+    = succeed "." do
+      %a{:href => "http://www.traderjoes.com/"} Trader Joe's
+    %br/
+    = succeed "Oh" do
+      %br/
+    yea, there's even a
+    %a{:href => "http://www.scooterscoffeehouse.com/"} Scooter's
+    there if you're too snooty for our coffee!
+  %hr/
+  #prices.item
+    %h4 How much does it cost?
+    %p We have several plans depending on how much more productive you're looking to be..
+    #listing
+      .price.blue
+        %p DreamCrusher
+        %ul
+          %li A full month
+          %li Reserved Desk
+          %li
+            %a{:href => "#guestpass"} Guest Pass
+        %span.amount $250/mo
+        #covisDesks
+      .price.green
+        %p NightBreaker
+        %ul
+          %li A full month
+          %li Open Table
+          %li
+            %a{:href => "#guestpass"} Guest Pass
+        %span.amount $200/mo
+    %br/
+    %h4 What's included?
+    %p
+      Well, everyone gets..
+      %ul
+        %li • 24-hour access
+        %li • Cox high-speed internet via Wi-Fi
+        %li • snacks and pop
+        %li • coffee and Red Bull
+        %li • access to a tv and a whiteboard
+        %li • access to a fridge and microwave
+        %li • access to any events hosted at CoVis
+        %li
+          • access to the
+          %a{:href => "http://www.sonos.com/"} SONOS
+          sound system
+        %li • awesome people
+    %h4#guestpass What's this "Guest Pass" thing?
+    %p Wanna bring a friend? You can! You're responsible for them and they can't be there without you, but feel free to bring a friend!
+    %p Also works the other way around.. know somebody who's a top-tier member? Ask to be their guest and skip paying the drop-in fee!
+    %h4 What about drop-ins?
+    %p
+      If you'd like to stop by before signing up, we offer a drop-in rate of $25/day. We ask that you call ahead of time to make sure someone is around to show you the ropes.
+    %h4 Sounds good, donut?
+    %p
+      If you're ready to grow, or you have any questions just reach out and..
+      %ul
+        %li Call: [402] 915-5567
+        %li
+          Email:
+          %a{:href => "mailto:info@covisco.com"} info@covisco.com
+        %li
+          Tweet:
+          %a{:href => "http://www.twitter.com/covisco"} @covisco

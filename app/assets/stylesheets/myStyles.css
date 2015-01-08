@@ -1,0 +1,44 @@
+body{
+	padding-top:100px;
+	padding-bottom:40px;
+	font-family: Open Sans; 
+	font-size: 15px; 
+}
+h1, h2, h3, h4, h5, h6, h1 a, h2 a, h3 a, h4 a, h5 a, h6 a { font-family: Quattrocento;}
+
+#header{padding-top:5px;}
+#myBar h4{ font-size:18px; text-transform:uppercase; border-bottom: 1px solid #ddd; padding: 2px 0;}
+#home i{color:#888;}
+#pricelist div{width:20%; background-color:#ddd; display:block;}
+#listing{width:360px; margin:0 auto; overflow:hidden;}
+#listing span{display:block; text-align:center;}
+#listing p{font-weight:bold; text-align:center; margin:0; padding:2px;}
+#firstLoad{background-color:#000; color:#fff; text-align:center; display:none;}
+#firstLoad a:hover{color:#fff; text-decoration:none;}
+#dismiss{float:right;}
+#firstVideo{display:none; background-color:#111; text-align:center; padding:10px;}
+#firstVideo img{padding:10px;}
+#covisDesks{padding:0; margin:0; text-align:center; font-variant:small-caps;}
+#logos a{display:block; padding:5px; text-align:center;}
+#logos img{border: 1px solid #ddd;}
+
+.hidden{display:none;}
+.price{width:175px; float:left; border:1px solid #ddd; margin:2px; height:175px;}
+.price li, .price ul{padding-top:2px;}
+.price p{ font-variant:small-caps;}
+
+.amount{font-weight:bold; text-align:center; font-size:20px; padding: 15px 0; margin:0;}
+.blue{background-color:#eef; border: 1px solid #ccf; color:#225;}
+.blue p{background-color:#ccf;}
+.green{background-color:#efe; border: 1px solid #0f0; color:#252;}
+.green p{background-color:#cfc;}
+.yellow{background-color:#ffe; border: 1px solid #ddb; color:#552;}
+.yellow p{background-color:#ffc;}
+.grey{background-color:#eee; border: 1px solid #ddd; color:#555;}
+.grey p{background-color:#ccc;}
+.right {float:right;}
+.bold { font-weight: bold;}
+.gaming{font-family: joystix_monospaceregular; color:#007dff; font-size:10px;}
+
+.event{font-size:13px; display:block;}
+

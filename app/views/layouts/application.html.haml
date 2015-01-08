@@ -2,8 +2,124 @@
 %html
   %head
     %title CoVis CoWorking - Omaha, Nebraska
-    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
+    = stylesheet_link_tag  'application', media: 'all', 'data-turbolinks-track' => true
+    = stylesheet_link_tag 'joystix/joystix.css'
+    = stylesheet_link_tag 'http://fonts.googleapis.com/css?family=Open+Sans|Quattrocento'
+    = stylesheet_link_tag 'bootstrap.css'
+    = stylesheet_link_tag 'bootstrap-responsive.css'
+    = stylesheet_link_tag 'myStyles.css'
+    = stylesheet_link_tag 'http://www.covisco.com/blog/wp-content/themes/presswork/style.css'
+
     = javascript_include_tag 'application', 'data-turbolinks-track' => true
+    = javascript_include_tag 'https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js'
+    = javascript_include_tag 'bootstrap.js'
+    = javascript_include_tag 'myScript.js'
+    = javascript_include_tag 'jquery.shuffleLetters.js'
+    = javascript_include_tag 'jquery.rest.js'
+    = javascript_include_tag 'firstLoad.js'
+    = javascript_include_tag 'jquery.lightbox_me.js'
     = csrf_meta_tags
+
+    %link{:href => "http://www.covisco.com/blog/wp-content/themes/presswork/admin/images/favicon.ico", :rel => "shortcut icon", :type => "image/x-icon"}/
+    %meta{:content => "text/html; charset=utf-8", "http-equiv" => "Content-Type"}
+    %meta{:content => "width=device-width, initial-scale=1.0", :name => "viewport"}
+
+    / Facebook link Image
+    %meta{:content => "http://covisco.com/img/cvstwitter.png", :property => "og:image"}/
+    %meta{:content => "Skid Vis", :name => "author"}/
   %body
-    = yield
+    #firstLoad.gaming{:style => "padding:20px;"}
+      %a{:href => "#", :onClick => "showVideo();", :style => "font-size:30px;"}
+        Wondering what coworking is?
+        %br>/
+        click here to watch a short video!
+      %a#dismiss{:href => "#", :onClick => "dismiss();"} dismiss
+    #firstVideo
+      %iframe{:allowFullScreen => "", :frameborder => "0", :height => "360", :mozallowfullscreen => "", :src => "http://player.vimeo.com/video/51794703?title=0&amp;byline=0&amp;portrait=0", :webkitAllowFullScreen => "", :width => "640"}
+    .container
+      #header.row.nav
+        %span.brand
+          = image_tag('logo_front.png')
+          %span{:style => "float:right;"}
+            = link_to image_tag('bitcoin.png'), 'http://bitcoin.org'
+        %ul.nav.nav-tabs
+          %li
+            = link_to 'Home', '/'
+          %li
+            %a{:href => "#", :onClick => "showVideo();"} What is Coworking?
+          %li
+            %a{:href => "#prices"} How Much Does It Cost?
+          %li
+            %a{:href => "http://www.flickr.com/photos/covisco"} Photos
+          %li
+            = link_to 'Events', '/events'
+      .row
+        .span9
+          #main.well
+            .carousel-inner
+              = yield
+
+        #myBar.span3
+          %div{:itemscope => "", :itemtype => "http://schema.org/LocalBusiness"}
+            %h4{:itemprop => "name"} CoVis CoWorking
+            %address{:itemprop => "address", :itemscope => "", :itemtype => "http://schema.org/PostalAddress"}
+              %span{:itemprop => "streetAddress"} 920 South 107th Avenue
+              = succeed "Suite" do
+                %br/
+              106
+              %br/
+              = succeed "," do
+                %span{:itemprop => "addressLocality"} Omaha
+              %span{:itemprop => "addressRegion"} Nebraska
+              68114
+              = succeed "[402]" do
+                %br/
+              915-5567
+              %br/
+              = succeed "(" do
+                %br/
+              = succeed ")" do
+                %a{:href => "http://g.co/maps/njpdk"} map
+            %p{:style => "font-size:12px;"}
+              %a{:href => "http://twitter.com/covisco"} covisco
+              on Twitter
+              %br/
+              %a{:href => "http://facebook.com/covisco"} covisco
+              on Facebook
+              %br/
+              %a{:href => "mailto:info@covisco.com"} info@covisco.com
+            %h4 Latest Check-ins:
+            %p
+              %span#covisCheckins
+            %h4 What's Happening Soon?
+            %p
+              %span#covisEvents
+              %iframe{:frameborder => "0", :height => "300", :scrolling => "no", :src => "https://www.google.com/calendar/embed?showTitle=0&showNav=0&showDate=0&showPrint=0&showTabs=0&showCalendars=0&showTz=0&mode=AGENDA&height=300&wkst=1&bgcolor=%23ffffff&src=7g80hb5i4h1dqc49g1scmkgl0g%40group.calendar.google.com&color=%23060D5E&ctz=America%2FChicago", :style => " border-width:0 ", :width => "270"}
+              %span{:style => "font-size:12px;"}
+                %a{:href => "/events"} Have your next event here!
+            %h4 What's Happening Now?
+            %img{:alt => "screenshot", :src => "http://local.covisco.com/grabs/newShot_1.jpg"}/
+            %div{:style => "margin:0, padding:0; text-align:center; font-size:12px;"}
+              %script{:src => "http://local.covisco.com/filemod.php", :type => "text/javascript"}
+              = succeed "Updated" do
+                %br/
+              every 5 minutes
+      %hr/
+      %footer{:style => "text-align:center;"}
+        \&copy;
+        %a{:href => "http://www.iceghost.com"} IceGhost LLC
+    %script{:src => "http://local.covisco.com/checkins.php", :type => "text/javascript"}
+    %script{:src => "http://local.covisco.com/events.php", :type => "text/javascript"}
+    %script{:src => "http://local.covisco.com/desks.php", :type => "text/javascript"}
+    :javascript
+      var _gaq = _gaq || [];
+      var pluginUrl = '//www.google-analytics.com/plugins/ga/inpage_linkid.js';
+      _gaq.push(['_require', 'inpage_linkid', pluginUrl]);
+      _gaq.push(['_setAccount', 'UA-1363435-14']);
+      _gaq.push(['_trackPageview']);
+
+      (function () {
+          var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+          ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+          var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
