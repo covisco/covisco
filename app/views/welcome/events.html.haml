@@ -1,0 +1,27 @@
+#home.item.active
+  %h4 CoVis CoWorking Events
+  .carousel.slide{:style => "width:300px; height:301px; float:right;"}
+    .carousel-inner
+      .active.item{:style => "text-align:center;"}
+        = image_tag('events/001.jpg')
+      .item
+        = image_tag('events/002.jpg')
+      .item
+        = image_tag('events/004.jpg')
+      .item
+        = image_tag('events/005.jpg')
+      .item
+        = image_tag('events/006.jpg')
+  %span
+    %div{:style => "padding:5px;"}
+      %p We at CoVis believe that we all have something to learn and something to teach. That's why we like to host workshops on various topics.
+      %p
+        You can stay up to date on our events by keeping up with our
+        %a{:href => "http://www.eventbrite.com/o/covis-coworking-2942559735"} Eventbrite
+        page or following us on
+        = succeed "." do
+          %a{:href => "http://facebook.com/covisco"} Facebook
+      %p Would you like to host a workshop at CoVis? We'd be happy to have you, just reach out and contact us using any of the methods listed on the sidebar.
+    %iframe{:frameborder => "0", :height => "300", :scrolling => "no", :src => "https://www.google.com/calendar/embed?showTitle=0&showNav=0&showDate=0&showPrint=0&showTabs=0&showCalendars=0&showTz=0&mode=AGENDA&height=300&wkst=1&bgcolor=%23ffffff&src=7g80hb5i4h1dqc49g1scmkgl0g%40group.calendar.google.com&color=%23060D5E&ctz=America%2FChicago", :style => " border-width:0 ", :width => "500"}
+    :javascript
+      $('.carousel').carousel();
