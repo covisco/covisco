@@ -39,7 +39,7 @@
     .container
       #header.row.nav
         %span.brand
-          = image_tag('logo_front.png')
+          = link_to image_tag('logo_front.png'), '/'
           %span{:style => "float:right;"}
             = link_to image_tag('bitcoin.png'), 'http://bitcoin.org'
         %ul.nav.nav-tabs
