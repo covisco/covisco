@@ -11,7 +11,7 @@ function checkCookie() {
 
             // set the cookie to show user has already visited
             document.cookie = cookieName + "=1";
-			$("#firstLoad").slideDown();
+			//$("#firstLoad").slideDown();
     }
 }
 
