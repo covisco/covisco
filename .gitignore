@@ -14,8 +14,9 @@
 # Ignore all logfiles and tempfiles.
 /log/*.log
 /tmp
-.idea/*
+/.idea
 .idea/workspace.xml
 .idea/vcs.xml
 config/database.yml
 config/secrets.yml
+/.idea
