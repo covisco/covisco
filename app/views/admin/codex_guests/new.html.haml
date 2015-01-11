@@ -1,0 +1,3 @@
+= form_for @codex_guest, as: :codex_guests, :url => admin_codex_guests_path,:html => { :multipart => true } do |form|
+  = form.file_field :avatar
+  = form.submit

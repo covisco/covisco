@@ -12,6 +12,7 @@ gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0',          group: :doc
 gem 'spring',        group: :development
 gem 'jazz_hands', group: :development
+gem 'better_errors', group: :development
 gem 'haml-rails'
 gem 'paperclip', '~> 4.2'
 gem 'aws-sdk', '~> 1.5.7'
