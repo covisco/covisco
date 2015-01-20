@@ -1,3 +1,45 @@
 = form_for @codex_guest, as: :codex_guests, :url => admin_codex_guests_path,:html => { :multipart => true } do |form|
-  = form.file_field :avatar
-  = form.submit
+  %table
+    %tr
+      %td First Name
+      %td
+        = form.text_field :first_name
+    %tr
+      %td Last Name
+      %td
+        = form.text_field :last_name
+    %tr
+      %td Title
+      %td
+        = form.text_field :title
+    %tr
+      %td twitter
+      %td
+        = form.text_field :twitter
+    %tr
+      %td Facebook
+      %td
+        = form.text_field :facebook
+    %tr
+      %td LinkedIn
+      %td
+        = form.text_field :linkedin
+    %tr
+      %td Website
+      %td
+        = form.text_field :website
+    %tr
+      %td Youtube Video Link
+      %td
+        = form.text_field :link_video
+    %tr
+      %td Audio Link
+      %td
+        = form.text_field :link_audio
+    %tr
+      %td Avatar
+      %td
+        = form.file_field :avatar
+    %tr
+      %td{colspan: 2, style: 'text-align: center;'}
+        = form.submit
