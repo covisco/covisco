@@ -53,6 +53,8 @@
             %a{:href => "http://www.flickr.com/photos/covisco"} Photos
           %li
             = link_to 'Events', '/events'
+          %li
+            = link_to 'Codex', '/codex'
       .row
         %p.notice= notice
         %p.notice= alert
@@ -92,7 +94,10 @@
               %br/
               %a{:href => "mailto:info@covisco.com"} info@covisco.com
             - if @codex_guest.present?
-              %h4 Latest Codex entry:
+              %h4
+                Latest
+                = link_to 'Codex', '/codex'
+                entry:
               %div{style: 'text-align: center;'}
                 %p
                   = link_to "#{@codex_guest.link_video}", style: 'text-decoration: none;' do

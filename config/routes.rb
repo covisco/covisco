@@ -1,7 +1,10 @@
 Rails.application.routes.draw do
+
   devise_for :users
   get '/' => 'welcome#index'
   get '/events' => 'welcome#events'
+  resources :codex, only: [:index, :show]
+
 
   root 'welcome#index'
 

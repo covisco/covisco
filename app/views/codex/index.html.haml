@@ -1,0 +1,26 @@
+%h1 Welcome to the CoVis Codex
+%hr
+%h4 What's the CoVis Codex?
+%p
+  The CoVis Codex is an interview podcast where we meet up with the community's movers and shakers.
+  We ask them the hard-hitting questions we know everyone is just dying to know the answers to.
+  %br
+  %br
+    Questions like "What's your favorite band?" or "Pepsi or Coke?"
+%h4 But.. why?
+%p
+  Well, we all know these people. We know what they do, but when we see them in public we have nothing to talk about other than their business.
+  Wouldn't it be nice to know if you have anything else to discuss??
+  %br
+  %br
+    By asking "trivial" questions we can get to know these rock stars on a more personal level. That's good for them, it's good for you, and it's good for the community as a whole.
+  %br
+    \...plus I get a kick out it. :)
+%h4 Who's in the Codex?
+%p These fine superstars:
+%p
+  - @codex_guests.each do |guest|
+    %div{style: 'width:200px; display: inline-block; border: solid 1px #ddd; text-align: center; padding: 5px;'}
+      = link_to "/codex/#{guest.slug}" do
+        = image_tag guest.avatar.url(:small)
+        %br= guest.full_name

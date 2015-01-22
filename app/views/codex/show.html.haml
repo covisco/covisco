@@ -1,0 +1,38 @@
+%h1{style: 'margin:0;'}
+  CoVis Codex -
+  = @codex_guest.full_name
+%br
+%iframe{:frameborder => "0", :src => "http://www.youtube.com/embed/#{@video_link}", :width => '854', :height => '510'}
+%br
+%br
+%div
+  %div
+    %span{style: 'display: inline-block'}
+      = image_tag @codex_guest.avatar.url(:medium)
+    %span{style: 'display: inline-block; vertical-align: top; padding: 5px; margin: 5px; float: right;'}
+      %ul{style: 'text-align: right;'}
+        %li{style: 'font-size: 50px; display: initial;'}
+          = @codex_guest.full_name
+        %li{style: 'padding-bottom: 20px; color: #ccc;'}
+          = @codex_guest.date_uploaded.strftime("%m/%d/%Y")
+        - if @codex_guest.twitter.present?
+          %li{style: 'padding: 5px 0;'}
+            twitter:
+            = link_to "http://twitter.com/#{@codex_guest.twitter}", "http://twitter.com/#{@codex_guest.twitter}"
+        - if @codex_guest.facebook.present?
+          %li{style: 'padding: 5px 0;'}
+            facebook:
+            = link_to "http://facebook.com/#{@codex_guest.facebook}", "http://facebook.com/#{@codex_guest.facebook}"
+        - if @codex_guest.linkedin.present?
+          %li{style: 'padding: 5px 0;'}
+            linkedin:
+            = link_to "http://linkedin.com/in/#{@codex_guest.linkedin}", "http://linkedin.com/in/#{@codex_guest.linkedin}"
+        - if @codex_guest.website.present?
+          %li{style: 'padding: 5px 0;'}
+            web:
+            = link_to "http://#{@codex_guest.website}", "http://#{@codex_guest.website}"
+        %li{style: 'padding: 5px 0;'}
+        %li{style: 'padding: 5px 0;'}
+        %li{style: 'padding: 5px 0;'}
+          Podcast MP3:
+          = link_to "download", "#{@codex_guest.audio.url}"
