@@ -33,7 +33,7 @@ class Admin::CodexGuestsController < ApplicationController
                                          :title, :twitter,
                                          :facebook, :linkedin,
                                          :website, :link_video,
-                                         :link_audo, :avatar, :date_uploaded)
+                                         :link_audio, :avatar, :audio, :date_uploaded)
   end
 
   def verify_admin

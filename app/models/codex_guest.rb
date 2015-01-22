@@ -4,9 +4,16 @@ class CodexGuest < ActiveRecord::Base
   friendly_id :full_name, use: :slugged
 
   has_attached_file :avatar,
+                    :styles => { :medium => "300x300>", :small => "200x200>", :thumb => "100x100>" },
                     :storage => :s3,
                     :s3_credentials => Proc.new{|a| a.instance.s3_credentials }
-  validates_attachment_content_type :avatar, :content_type => ["audio/mp3"]
+
+  has_attached_file :audio,
+                    :storage => :s3,
+                    :s3_credentials => Proc.new{|a| a.instance.s3_credentials }
+
+  validates_attachment_content_type :avatar, :content_type => ["image/jpg", "image/jpeg", "image/png", "image/gif"]
+  validates_attachment_content_type :audio, :content_type => ["audio/mp3"]
 
 
   def s3_credentials

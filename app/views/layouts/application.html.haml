@@ -96,7 +96,7 @@
               %div{style: 'text-align: center;'}
                 %p
                   = link_to "#{@codex_guest.link_video}", style: 'text-decoration: none;' do
-                    = image_tag "http://avatars.io/twitter/#{@codex_guest.twitter}?size=large"
+                    = image_tag @codex_guest.avatar.url(:small)
                     %br
                       = @codex_guest.full_name
                 %p
