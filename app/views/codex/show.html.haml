@@ -1,8 +1,9 @@
 %h1{style: 'margin:0;'}
   CoVis Codex -
   = @codex_guest.full_name
-%br
-%iframe{:frameborder => "0", :src => "http://www.youtube.com/embed/#{@video_link}", :width => '854', :height => '510'}
+%hr
+%div{class: 'embed-container'}
+  %iframe{:frameborder => "0", :src => "http://www.youtube.com/embed/#{@video_link}"}
 %br
 %br
 %div
@@ -17,19 +18,19 @@
         - if @codex_guest.twitter.present?
           %li{style: 'padding: 5px 0;'}
             twitter:
-            = link_to "http://twitter.com/#{@codex_guest.twitter}", "http://twitter.com/#{@codex_guest.twitter}"
+            = link_to "@#{@codex_guest.twitter}", "http://twitter.com/#{@codex_guest.twitter}"
         - if @codex_guest.facebook.present?
           %li{style: 'padding: 5px 0;'}
             facebook:
-            = link_to "http://facebook.com/#{@codex_guest.facebook}", "http://facebook.com/#{@codex_guest.facebook}"
+            = link_to "#{@codex_guest.facebook}", "http://facebook.com/#{@codex_guest.facebook}"
         - if @codex_guest.linkedin.present?
           %li{style: 'padding: 5px 0;'}
             linkedin:
-            = link_to "http://linkedin.com/in/#{@codex_guest.linkedin}", "http://linkedin.com/in/#{@codex_guest.linkedin}"
+            = link_to "#{@codex_guest.linkedin}", "http://linkedin.com/in/#{@codex_guest.linkedin}"
         - if @codex_guest.website.present?
           %li{style: 'padding: 5px 0;'}
             web:
-            = link_to "http://#{@codex_guest.website}", "http://#{@codex_guest.website}"
+            = link_to "#{@codex_guest.website}", "http://#{@codex_guest.website}"
         %li{style: 'padding: 5px 0;'}
         %li{style: 'padding: 5px 0;'}
         %li{style: 'padding: 5px 0;'}
