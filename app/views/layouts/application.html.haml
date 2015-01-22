@@ -1,7 +1,8 @@
 !!!
 %html
   %head
-    %title CoVis CoWorking - Omaha, Nebraska
+    %title
+      = @video_link.present? ? "CoVis Codex - #{@codex_guest.full_name}" : 'CoVis CoWorking - Omaha, Nebraska'
     = stylesheet_link_tag  'application', media: 'all', 'data-turbolinks-track' => true
     = stylesheet_link_tag 'joystix/joystix.css'
     = stylesheet_link_tag 'http://fonts.googleapis.com/css?family=Open+Sans|Quattrocento'
