@@ -33,8 +33,18 @@
             = link_to "#{@codex_guest.website}", "http://#{@codex_guest.website}"
         %li{style: 'padding: 5px 0;'}
         %li{style: 'padding: 5px 0;'}
-        %li{style: 'padding: 5px 0;'}
           Podcast MP3:
           = link_to "download", "#{@codex_guest.audio.url}"
         %li{style: 'color: #ccc;'}
           = @codex_guest.date_uploaded.strftime("%m/%d/%Y")
+        %li{style: 'padding: 5px 0; float: right;'}
+          %table
+            %tr
+              %td{style: 'vertical-align: bottom; border: none;'}
+                = tweet_button
+            %tr
+              %td{style: 'vertical-align: bottom; border: none;'}
+                = like_button(Rails.application.secrets.facebook_app_id)
+            %tr
+              %td{style: 'vertical-align: bottom; border: none;'}
+                = pinit_button
