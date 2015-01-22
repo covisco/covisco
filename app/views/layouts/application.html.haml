@@ -91,14 +91,15 @@
               on Facebook
               %br/
               %a{:href => "mailto:info@covisco.com"} info@covisco.com
-            %h4 Latest Codex entry:
-            %div{style: 'text-align: center;'}
-              %p
-                = image_tag "http://avatars.io/twitter/#{@codex_guest.twitter}?size=large"
-              %p
-                = link_to "#{@codex_guest.full_name}", "#{@codex_guest.link_video}"
-              %p
-                = link_to 'Get MP3', @codex_guest.avatar.url
+            - if @codex_guest.present?
+              %h4 Latest Codex entry:
+              %div{style: 'text-align: center;'}
+                %p
+                  = image_tag "http://avatars.io/twitter/#{@codex_guest.twitter}?size=large"
+                %p
+                  = link_to "#{@codex_guest.full_name}", "#{@codex_guest.link_video}"
+                %p
+                  = link_to 'Get MP3', @codex_guest.avatar.url
             %h4 Latest Check-ins:
             %p
               %span#covisCheckins
