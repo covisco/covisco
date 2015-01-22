@@ -38,13 +38,3 @@
         %li{style: 'color: #ccc;'}
           = @codex_guest.date_uploaded.strftime("%m/%d/%Y")
         %li{style: 'padding: 5px 0; float: right;'}
-          %table
-            %tr
-              %td{style: 'vertical-align: bottom; border: none;'}
-                = tweet_button
-            %tr
-              %td{style: 'vertical-align: bottom; border: none;'}
-                = like_button(Rails.application.secrets.facebook_app_id)
-            %tr
-              %td{style: 'vertical-align: bottom; border: none;'}
-                = pinit_button
