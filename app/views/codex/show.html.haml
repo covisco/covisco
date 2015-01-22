@@ -13,8 +13,7 @@
       %ul{style: 'text-align: right;'}
         %li{style: 'font-size: 50px; display: initial;'}
           = @codex_guest.full_name
-        %li{style: 'padding-bottom: 20px; color: #ccc;'}
-          = @codex_guest.date_uploaded.strftime("%m/%d/%Y")
+        %li{style: 'padding: 10px'}
         - if @codex_guest.twitter.present?
           %li{style: 'padding: 5px 0;'}
             twitter:
@@ -36,3 +35,5 @@
         %li{style: 'padding: 5px 0;'}
           Podcast MP3:
           = link_to "download", "#{@codex_guest.audio.url}"
+        %li{style: 'color: #ccc;'}
+          = @codex_guest.date_uploaded.strftime("%m/%d/%Y")

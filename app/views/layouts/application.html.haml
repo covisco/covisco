@@ -100,12 +100,10 @@
                 entry:
               %div{style: 'text-align: center;'}
                 %p
-                  = link_to "#{@codex_guest.link_video}", style: 'text-decoration: none;' do
+                  = link_to "/codex/#{@codex_guest.slug}", style: 'text-decoration: none;' do
                     = image_tag @codex_guest.avatar.url(:small)
                     %br
                       = @codex_guest.full_name
-                %p
-                  = link_to 'Get MP3', @codex_guest.avatar.url
             %h4 Latest Check-ins:
             %p
               %span#covisCheckins
