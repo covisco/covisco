@@ -21,7 +21,7 @@
       %meta{:content => "#{Rails.application.secrets.facebook_app_id}", :property => "fb:app_id"}/
       %meta{:content => "#{request.original_url}", :property => "og:url"}/
       %meta{:content => "CoVis Codex - #{@codex_guest.full_name}", :property => "og:title"}/
-      %meta{:content => "#{@codex_guest.avatar.url}", :property => "og:image"}/
+      %meta{:content => "#{@codex_guest.avatar.url.split('?').first}", :property => "og:image"}/
 
     %link{:href => "/favicon.ico", :rel => "shortcut icon", :type => "image/x-icon"}/
     %meta{:content => "text/html; charset=utf-8", "http-equiv" => "Content-Type"}
