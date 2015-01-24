@@ -1,9 +1,6 @@
 $(function () {
-    //$('.carousel').carousel();
-
     $("#freeLink").shuffleLetters();
     $(".myEmail").attr("href", "mailto:" + "info" + "@" + "covisco.com");
-    
 });
 
 

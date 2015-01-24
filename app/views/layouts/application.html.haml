@@ -6,14 +6,11 @@
     = stylesheet_link_tag  'application', media: 'all', 'data-turbolinks-track' => true
     = stylesheet_link_tag 'joystix/joystix.css'
     = stylesheet_link_tag 'http://fonts.googleapis.com/css?family=Open+Sans|Quattrocento'
-    = stylesheet_link_tag 'bootstrap.css'
-    = stylesheet_link_tag 'bootstrap-responsive.css'
     = stylesheet_link_tag 'myStyles.css'
     = stylesheet_link_tag 'style.css'
 
     = javascript_include_tag 'application', 'data-turbolinks-track' => true
     = javascript_include_tag 'https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js'
-    = javascript_include_tag 'bootstrap.js'
     = javascript_include_tag 'myScript.js'
     = javascript_include_tag 'jquery.shuffleLetters.js'
     = javascript_include_tag 'jquery.rest.js'
@@ -61,12 +58,12 @@
         %p.notice= notice
         %p.notice= alert
       .row
-        .span9
+        .col-sm-9
           #main.well
             .carousel-inner
               = yield
 
-        #myBar.span3
+        #myBar.col-sm-3
           %div{:itemscope => "", :itemtype => "http://schema.org/LocalBusiness"}
             %h4{:itemprop => "name"} CoVis CoWorking
             %address{:itemprop => "address", :itemscope => "", :itemtype => "http://schema.org/PostalAddress"}
@@ -118,10 +115,9 @@
             %h4 What's Happening Now?
             %img{:alt => "screenshot", :src => "http://local.covisco.com/grabs/newShot_1.jpg"}/
             %div{:style => "margin:0, padding:0; text-align:center; font-size:12px;"}
+              %span{id: 'last_update_time'}
               %script{:src => "http://local.covisco.com/filemod.php", :type => "text/javascript"}
-              = succeed "Updated" do
-                %br/
-              every 5 minutes
+              %br Updated every 5 minutes
       %hr/
       %footer{:style => "text-align:center;"}
         \&copy;
