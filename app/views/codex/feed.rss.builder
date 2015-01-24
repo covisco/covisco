@@ -8,7 +8,7 @@ xml.rss :version => "2.0" do
     for article in @guests
       xml.item do
         xml.title "CoVis Codex - #{article.full_name}"
-        xml.description "In this episode we interview #{article.full_name}!"
+        xml.description article.description
         xml.pubDate article.created_at.to_s(:rfc822)
         xml.enclosure :url => article.audio.url, :length => article.audio.size, :type => 'audio/mpeg'
         xml.link codex_url(article)

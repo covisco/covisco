@@ -2,7 +2,7 @@ class Admin::CodexGuestsController < ApplicationController
   before_filter :verify_admin
 
   def index
-
+    @codex_guests = CodexGuest.all
   end
 
   def new
@@ -23,6 +23,20 @@ class Admin::CodexGuestsController < ApplicationController
 
   end
 
+  def edit
+    @codex_guest = CodexGuest.friendly.find(params[:id])
+  end
+
+  def update
+    @codex_guest = CodexGuest.friendly.find(params[:id])
+
+    if @codex_guest.update_attributes( user_params )
+      redirect_to admin_codex_guests_path
+    else
+      render :edit
+    end
+  end
+
   private
 
 # Use strong_parameters for attribute whitelisting
@@ -32,7 +46,7 @@ class Admin::CodexGuestsController < ApplicationController
     params.require(:codex_guests).permit(:first_name, :last_name,
                                          :title, :twitter,
                                          :facebook, :linkedin,
-                                         :website, :link_video,
+                                         :website, :link_video, :description,
                                          :link_audio, :avatar, :audio, :date_uploaded)
   end
 

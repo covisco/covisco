@@ -1,11 +1,19 @@
 %h1{style: 'margin:0;'}
   CoVis Codex -
   = @codex_guest.full_name
+  %span{style: 'float:right; font-size: 20px;'}
+    = link_to 'http://feeds.feedburner.com/CovisCodex', style: 'color: orange;' do
+      = fa_icon 'rss-square'
+      RSS
 %hr
 %div{class: 'embed-container'}
   %iframe{:frameborder => "0", :src => "http://www.youtube.com/embed/#{@video_link}"}
 %br
-%br
+%div{style: 'text-align: right; overflow: auto;'}
+  %span{style: 'float: left;'}
+    %a.twitter-share-button{:href => "https://twitter.com/share"} Tweet
+  .fb-like{"data-action" => "like", "data-href" => "#{request.original_url}", "data-layout" => "button_count", "data-share" => "true", "data-show-faces" => "true"}
+%hr
 %div
   %div
     %span{style: 'display: inline-block'}

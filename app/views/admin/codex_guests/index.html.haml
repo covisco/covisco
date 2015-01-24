@@ -1,1 +1,18 @@
-Hi there!
+%div{style: 'text-align: right;'}
+  = link_to 'Add New Guest', new_admin_codex_guest_path
+%table
+  %tr
+    %th
+      Guest Name
+    %th
+      View
+    %th
+      Edit
+  - @codex_guests.each do |codex_guest|
+    %tr
+      %td
+        = codex_guest.full_name
+      %td
+        = link_to 'view', codex_path(codex_guest)
+      %td
+        = link_to 'edit',edit_admin_codex_guest_path(codex_guest)
