@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   resources :codex, only: [:index, :show]
   get '/feed' => 'codex#feed',
         :as => :feed,
-        :defaults => { :format => 'atom' }
+        :defaults => { :format => 'rss' }
 
 
   root 'welcome#index'
