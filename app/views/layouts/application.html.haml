@@ -17,6 +17,11 @@
     = javascript_include_tag 'jquery.lightbox_me.js'
     = javascript_include_tag '//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-54c12403411d866d', :async => true
     = csrf_meta_tags
+    - if @video_link.present?
+      %meta{:content => "#{Rails.application.secrets.facebook_app_id}", :property => "fb:app_id"}/
+      %meta{:content => "#{request.original_url}", :property => "og:url"}/
+      %meta{:content => "CoVis Codex - #{@codex_guest.full_name}", :property => "og:title"}/
+      %meta{:content => "#{@codex_guest.avatar.url}", :property => "og:image"}/
 
     %link{:href => "/favicon.ico", :rel => "shortcut icon", :type => "image/x-icon"}/
     %meta{:content => "text/html; charset=utf-8", "http-equiv" => "Content-Type"}
