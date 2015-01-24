@@ -3,7 +3,7 @@ xml.rss :version => "2.0" do
   xml.channel do
     xml.title "CoVis Codex"
     xml.description "We interview movers and shakers and find out who they really are."
-    xml.link codex_url(:rss)
+    xml.link codex_url
 
     for article in @guests
       xml.item do
