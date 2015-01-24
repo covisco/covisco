@@ -20,6 +20,7 @@
     - if @video_link.present?
       %meta{:content => "#{Rails.application.secrets.facebook_app_id}", :property => "fb:app_id"}/
       %meta{:content => "#{request.original_url}", :property => "og:url"}/
+      %meta{:content => "article", :property => "og:type"}/
       %meta{:content => "CoVis Codex - #{@codex_guest.full_name}", :property => "og:title"}/
       %meta{:content => "#{@codex_guest.avatar.url.split('?').first}", :property => "og:image"}/
 
