@@ -24,12 +24,12 @@
       %meta{:content => "CoVis Codex - #{@codex_guest.full_name}", :property => "og:title"}/
       %meta{:content => "#{@codex_guest.avatar.url.split('?').first}", :property => "og:image"}/
 
-      %meta{:content => "summary_large_image", :name => "twitter:card"}/
+      %meta{:content => "summary_large_image", :name => "twitter:card"}
+      %meta{:content => "@covisco", :name => "twitter:site"}
+      %meta{:content => "@skidvis", :name => "twitter:creator"}
+      %meta{:content => "CoVis Codex - #{@codex_guest.full_name}", :name => "twitter:title"}
+      %meta{:content => "#{@codex_guest.description}", :name => "twitter:description"}
       %meta{:content => "#{@codex_guest.avatar.url.split('?').first}", :name => "twitter:image:src"}/
-      %meta{:content => "@covisco", :name => "twitter:site"}/
-      %meta{:content => "#{request.original_url}", :name => "twitter:url"}/
-      %meta{:content => "#{@codex_guest.description}", :name => "twitter:description"}/
-      %meta{:content => "CoVis Codex - #{@codex_guest.full_name}", :name => "twitter:title"}/
 
     %link{:href => "/favicon.ico", :rel => "shortcut icon", :type => "image/x-icon"}/
     %meta{:content => "text/html; charset=utf-8", "http-equiv" => "Content-Type"}
