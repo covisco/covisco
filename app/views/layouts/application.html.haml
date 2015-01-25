@@ -3,13 +3,13 @@
   %head
     %title
       = @video_link.present? ? "CoVis Codex - #{@codex_guest.full_name}" : 'CoVis CoWorking - Omaha, Nebraska'
-    = stylesheet_link_tag  'application', media: 'all', 'data-turbolinks-track' => true
+    = stylesheet_link_tag  'application', media: 'all', 'data-turbolinks-track' => false
     = stylesheet_link_tag 'joystix/joystix.css'
     = stylesheet_link_tag 'http://fonts.googleapis.com/css?family=Open+Sans|Quattrocento'
     = stylesheet_link_tag 'myStyles.css'
     = stylesheet_link_tag 'style.css'
 
-    = javascript_include_tag 'application', 'data-turbolinks-track' => true
+    = javascript_include_tag 'application', 'data-turbolinks-track' => false
     = javascript_include_tag 'myScript.js'
     = javascript_include_tag 'jquery.shuffleLetters.js'
     = javascript_include_tag 'jquery.rest.js'

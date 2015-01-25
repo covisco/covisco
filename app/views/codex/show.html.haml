@@ -92,3 +92,13 @@
   }(document, 'script', 'facebook-jssdk'));
 :javascript
   !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');
+:javascript
+  if ($(".fb-like").length > 0) {
+    if (typeof (FB) != 'undefined') {
+      FB.init({ status: true, cookie: true, xfbml: true });
+    } else {
+      $.getScript("//connect.facebook.net/en_US/sdk.js#xfbml=1&appId=441634829228957&version=v2.0", function () {
+        FB.init({ status: true, cookie: true, xfbml: true });
+      });
+    }
+  }
