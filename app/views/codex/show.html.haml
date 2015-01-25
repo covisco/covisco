@@ -15,37 +15,59 @@
   .fb-like{"data-action" => "like", "data-href" => "#{request.original_url}", "data-layout" => "button_count", "data-share" => "true", "data-show-faces" => "true"}
 %hr
 %div
-  %div
-    %span{style: 'display: inline-block'}
+  %div{style: 'overflow: auto;'}
+    %span{style: 'display: inline-block; float: left;'}
       = image_tag @codex_guest.avatar.url(:medium)
-    %span{style: 'display: inline-block; vertical-align: top; padding: 5px; margin: 5px; float: right;'}
-      %ul{style: 'text-align: right;'}
-        %li{style: 'font-size: 50px; display: initial;'}
-          = @codex_guest.full_name
-        %li{style: 'padding: 10px'}
+    %span{style: 'display: inline-block; vertical-align: top; float: right;'}
+      %table{style: 'margin:0;'}
+        %tr
+          %td{colspan: 2, style: 'border:0; text-align: center; font-size: 60px;'}
+            = @codex_guest.full_name
         - if @codex_guest.twitter.present?
-          %li{style: 'padding: 5px 0;'}
-            twitter:
-            = link_to "@#{@codex_guest.twitter}", "http://twitter.com/#{@codex_guest.twitter}"
+          %tr
+            %td{style: 'border: 0; text-align: right;'}
+              twitter:
+            %td{style: 'border: 0;'}
+              = link_to "http://twitter.com/#{@codex_guest.twitter}" do
+                = fa_icon 'twitter-square'
+                = @codex_guest.twitter
         - if @codex_guest.facebook.present?
-          %li{style: 'padding: 5px 0;'}
-            facebook:
-            = link_to "#{@codex_guest.facebook}", "http://facebook.com/#{@codex_guest.facebook}"
+          %tr
+            %td{style: 'border: 0; text-align: right;'}
+              facebook:
+            %td{style: 'border: 0;'}
+              = link_to "http://facebook.com/#{@codex_guest.facebook}" do
+                = fa_icon 'facebook-square'
+                = @codex_guest.facebook
         - if @codex_guest.linkedin.present?
-          %li{style: 'padding: 5px 0;'}
-            linkedin:
-            = link_to "#{@codex_guest.linkedin}", "http://linkedin.com/in/#{@codex_guest.linkedin}"
+          %tr
+            %td{style: 'border: 0; text-align: right;'}
+              linkedin:
+            %td{style: 'border: 0;'}
+              = link_to "http://linkedin.com/in/#{@codex_guest.linkedin}" do
+                = fa_icon 'linkedin-square'
+                = @codex_guest.linkedin
         - if @codex_guest.website.present?
-          %li{style: 'padding: 5px 0;'}
-            web:
-            = link_to "#{@codex_guest.website}", "http://#{@codex_guest.website}"
-        %li{style: 'padding: 5px 0;'}
-        %li{style: 'padding: 5px 0;'}
-          Podcast MP3:
-          = link_to "download", "#{@codex_guest.audio.url}"
-        %li{style: 'color: #ccc;'}
-          = @codex_guest.date_uploaded.strftime("%m/%d/%Y")
-        %li{style: 'padding: 5px 0; float: right;'}
+          %tr
+            %td{style: 'border: 0; text-align: right;'}
+              web:
+            %td{style: 'border: 0;'}
+              = link_to "http://#{@codex_guest.website}" do
+                = fa_icon 'external-link-square'
+                = @codex_guest.website
+        %tr
+          %td{style: 'border: 0;'}
+          %td{style: 'border: 0;'}
+        %tr
+          %td{style: 'border: 0; text-align: right;'}
+            Podcast MP3:
+          %td{style: 'border: 0;'}
+            = link_to "#{@codex_guest.audio.url}" do
+              = fa_icon "download"
+              Download
+        %tr
+          %td{colspan: 2, style: 'text-align: center; border: 0; color: #ddd;'}
+            = @codex_guest.date_uploaded.strftime("%m/%d/%Y")
 #fb-root
 :javascript
   (function(d, s, id) {
