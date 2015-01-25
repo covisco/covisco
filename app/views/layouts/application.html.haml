@@ -110,11 +110,10 @@
                 = link_to 'Codex', '/codex'
                 entry:
               %div{style: 'text-align: center;'}
-                %p
-                  = link_to "/codex/#{@codex_guest.slug}", style: 'text-decoration: none;' do
+                %div{style: 'width:200px; display: inline-block; border: solid 1px #ddd; text-align: center; padding: 5px; background-color:#eee;'}
+                  = link_to "/codex/#{@codex_guest.slug}" do
                     = image_tag @codex_guest.avatar.url(:small)
-                    %br
-                      = @codex_guest.full_name
+                    %br= @codex_guest.full_name
             %h4 Latest Check-ins:
             %p
               %span#covisCheckins

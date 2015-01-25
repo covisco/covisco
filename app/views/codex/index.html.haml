@@ -25,7 +25,7 @@
 %p These fine superstars (with more to come!):
 %p
   - @codex_guests.each do |guest|
-    %div{style: 'width:200px; display: inline-block; border: solid 1px #ddd; text-align: center; padding: 5px;'}
+    %div{style: 'width:200px; display: inline-block; border: solid 1px #ddd; text-align: center; padding: 5px; background-color: #fff;'}
       = link_to "/codex/#{guest.slug}" do
         = image_tag guest.avatar.url(:small)
         %br= guest.full_name
