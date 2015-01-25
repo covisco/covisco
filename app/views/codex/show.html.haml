@@ -9,10 +9,16 @@
 %div{class: 'embed-container'}
   %iframe{:frameborder => "0", :src => "http://www.youtube.com/embed/#{@video_link}"}
 %br
-%div{style: 'text-align: right; overflow: auto;'}
-  %span{style: 'float: left;'}
-    %a.twitter-share-button{:href => "https://twitter.com/share"}
-  .fb-like{"data-action" => "like", "data-href" => "#{request.original_url}", "data-layout" => "button_count", "data-share" => "true", "data-show-faces" => "true"}
+%div{style: 'text-align: center; overflow: auto;'}
+  %table{style: 'width:100%; padding: 0; margin: 0;'}
+    %tr
+      %td{style: 'border: 0; vertical-align: top; text-align: left;'}
+        %a.twitter-share-button{:href => "https://twitter.com/share"}
+      %td{style: 'border: 0; vertical-align: top;'}
+        %script{:src => "https://apis.google.com/js/platform.js"}
+        .g-ytsubscribe{"data-channelid" => "UCQIIHsMgPRyshGEWOk32CUA", "data-count" => "default", "data-layout" => "default"}
+      %td{style: 'border: 0; vertical-align: top; text-align: right;'}
+        .fb-like{"data-action" => "like", "data-href" => "#{request.original_url}", "data-layout" => "button_count", "data-share" => "true", "data-show-faces" => "true"}
 %hr
 %div
   %div{style: 'overflow: auto;'}
@@ -65,6 +71,13 @@
             = link_to "#{@codex_guest.audio.url}" do
               = fa_icon "download"
               Download
+        %tr
+          %td{style: 'border: 0; text-align: right;'}
+            Subscribe MP3:
+          %td{style: 'border: 0;'}
+            = link_to 'http://feeds.feedburner.com/CovisCodex', style: 'color: orange;' do
+              = fa_icon 'rss-square'
+              RSS
         %tr
           %td{colspan: 2, style: 'text-align: center; border: 0; color: #ddd;'}
             = @codex_guest.date_uploaded.strftime("%m/%d/%Y")
