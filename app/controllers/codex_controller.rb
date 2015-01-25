@@ -1,6 +1,6 @@
 class CodexController < ApplicationController
   def index
-    @codex_guests = CodexGuest.all
+    @codex_guests = CodexGuest.order('updated_at desc')
   end
 
   def show
