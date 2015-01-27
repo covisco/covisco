@@ -2,7 +2,7 @@ class Admin::CodexGuestsController < ApplicationController
   before_filter :verify_admin
 
   def index
-    @codex_guests = CodexGuest.all
+    @codex_guests = CodexGuest.order('date_uploaded desc')
   end
 
   def new
