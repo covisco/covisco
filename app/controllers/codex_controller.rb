@@ -1,6 +1,6 @@
 class CodexController < ApplicationController
   def index
-    @codex_guests = CodexGuest.order('updated_at desc')
+    @codex_guests = CodexGuest.order('date_uploaded desc')
   end
 
   def show
@@ -10,7 +10,7 @@ class CodexController < ApplicationController
 
   def feed
     @title = 'CoVis Codex'
-    @guests = CodexGuest.order('updated_at desc')
+    @guests = CodexGuest.order('date_uploaded desc')
     @update = @guests.first.updated_at unless @guests.empty?
 
     respond_to do |format|
