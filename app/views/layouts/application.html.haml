@@ -104,16 +104,16 @@
               on Facebook
               %br/
               %a{:href => "mailto:info@covisco.com"} info@covisco.com
-            - if @codex_guest.present?
+            - if @latest_codex_guest.present?
               %h4
                 Latest
                 = link_to 'Codex', '/codex'
                 entry:
               %div{style: 'text-align: center;'}
                 %div{style: 'width:200px; display: inline-block; border: solid 1px #ddd; text-align: center; padding: 5px; background-color:#eee;'}
-                  = link_to "/codex/#{@codex_guest.slug}" do
-                    = image_tag @codex_guest.avatar.url(:small)
-                    %br= @codex_guest.full_name
+                  = link_to "/codex/#{@latest_codex_guest.slug}" do
+                    = image_tag @latest_codex_guest.avatar.url(:small)
+                    %br= @latest_codex_guest.full_name
             %h4 Latest Check-ins:
             %p
               %span#covisCheckins

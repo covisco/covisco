@@ -20,9 +20,10 @@
     \...plus I get a kick out of it. :)
 %h4 Who's in the Codex?
 %p These fine superstars (with more to come!):
-%p
-  - @codex_guests.each do |guest|
-    %div{style: 'width:200px; display: inline-block; border: solid 1px #ddd; text-align: center; padding: 5px; background-color: #fff;'}
-      = link_to "/codex/#{guest.slug}" do
-        = image_tag guest.avatar.url(:small)
-        %br= guest.full_name
+%div{style: 'text-align: center;"'}
+  %span{style: 'display: inline-block;'}
+    - @codex_guests.each do |guest|
+      %div{style: 'width:200px; display: inline-block; border: solid 1px #ddd; text-align: center; padding: 5px; margin:5px; background-color: #fff;'}
+        = link_to "/codex/#{guest.slug}" do
+          = image_tag guest.avatar.url(:small)
+          %br= guest.full_name

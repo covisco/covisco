@@ -6,6 +6,6 @@ class ApplicationController < ActionController::Base
   before_filter :get_latest_codex_guest
 
   def get_latest_codex_guest
-    @codex_guest = CodexGuest.last
+    @latest_codex_guest = CodexGuest.last
   end
 end
