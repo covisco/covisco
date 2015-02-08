@@ -51,8 +51,6 @@
       #header.row.nav
         %span.brand
           = link_to image_tag('logo_front.png'), '/'
-          %span{:style => "float:right;"}
-            = link_to image_tag('bitcoin.png'), 'http://bitcoin.org'
         %ul.nav.nav-tabs
           %li
             = link_to 'Home', '/'
@@ -129,6 +127,8 @@
               %span{id: 'last_update_time'}
               %script{:src => "http://local.covisco.com/filemod.php", :type => "text/javascript"}
               %br Updated every 5 minutes
+            %div{style: 'padding: 15px; text-align: center;'}
+              = link_to image_tag('bitcoin.png'), 'http://bitcoin.org'
       %hr/
       %footer{:style => "text-align:center;"}
         \&copy;
