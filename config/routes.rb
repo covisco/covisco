@@ -3,11 +3,12 @@ Rails.application.routes.draw do
   devise_for :users
   get '/' => 'welcome#index'
   get '/events' => 'welcome#events'
+
   resources :codex, only: [:index, :show]
+  
   get '/feed' => 'codex#feed',
         :as => :feed,
         :defaults => { :format => 'rss' }
-
 
   root 'welcome#index'
 

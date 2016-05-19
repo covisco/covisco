@@ -55,13 +55,7 @@
           %li
             = link_to 'Home', '/'
           %li
-            %a{:href => "#", :onClick => "showVideo();"} What is Coworking?
-          %li
-            %a{:href => "/#prices"} How Much Does It Cost?
-          %li
             %a{:href => "http://www.flickr.com/photos/covisco"} Photos
-          %li
-            = link_to 'Events', '/events'
           %li
             = link_to 'Codex podcast', '/codex'
       .row
@@ -76,24 +70,6 @@
         #myBar.col-sm-3
           %div{:itemscope => "", :itemtype => "http://schema.org/LocalBusiness"}
             %h4{:itemprop => "name"} CoVis CoWorking
-            %address{:itemprop => "address", :itemscope => "", :itemtype => "http://schema.org/PostalAddress"}
-              %span{:itemprop => "streetAddress"} 920 South 107th Avenue
-              = succeed "Suite" do
-                %br/
-              106
-              %br/
-              = succeed "," do
-                %span{:itemprop => "addressLocality"} Omaha
-              %span{:itemprop => "addressRegion"} Nebraska
-              68114
-              = succeed "[402]" do
-                %br/
-              915-5567
-              %br/
-              = succeed "(" do
-                %br/
-              = succeed ")" do
-                %a{:href => "http://g.co/maps/njpdk"} map
             %p{:style => "font-size:12px;"}
               %a{:href => "http://twitter.com/covisco"} covisco
               on Twitter

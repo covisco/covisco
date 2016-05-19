@@ -3,6 +3,16 @@ Rails.application.configure do
 
   config.action_mailer.default_url_options = { host: 'covisco.com', port: 80 }
 
+  ActionMailer::Base.smtp_settings = {
+    :user_name => Rails.application.secrets.email_user
+    :password => Rails.application.secrets.email_password,
+    :domain => 'covisco.com',
+    :address => 'smtp.sendgrid.net',
+    :port => 587,
+    :authentication => :plain,
+    :enable_starttls_auto => true
+  }
+
   # Code is not reloaded between requests.
   config.cache_classes = true
 
