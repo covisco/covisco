@@ -1,6 +1,6 @@
+require 'mina/bundler'
 require 'mina/rails'
 require 'mina/git'
-# require 'mina/rbenv'  # for rbenv support. (https://rbenv.org)
 require 'mina/rvm'    # for rvm support. (https://rvm.io)
 
 # Basic settings:
@@ -16,9 +16,6 @@ set :repository, 'https://github.com/covisco/covisco.git'
 set :branch, 'master'
 
 # Optional settings:
-#   set :user, 'foobar'          # Username in the server to SSH to.
-#   set :port, '30000'           # SSH port number.
-#   set :forward_agent, true     # SSH forward_agent.
 set :user, 'sitedeploy'    # Username in the server to SSH to.
 set :ssh_options, '-A'
 set :forward_agent, true     # SSH forward_agent.
@@ -33,30 +30,24 @@ set :shared_files, fetch(:shared_files, []).push('config/secrets.yml')
 # This task is the environment that is loaded for all remote run commands, such as
 # `mina deploy` or `mina rake`.
 task :environment do
-  # If you're using rbenv, use this to load the rbenv environment.
-  # Be sure to commit your .ruby-version or .rbenv-version to your repository.
-  # invoke :'rbenv:load'
-
   # For those using RVM, use this to load an RVM version@gemset.
-  # invoke :'rvm:use', 'ruby-1.9.3-p125@default'
   invoke :'rvm:use', 'ruby-2.2.0'
 end
 
 # Put any custom commands you need to run at setup
 # All paths in `shared_dirs` and `shared_paths` will be created on their own.
 task :setup do
-  # command %{rbenv install 2.3.0}
-  command! %[mkdir -p "#{fetch(deploy_to)}/#{shared_path}/log"]
-  command! %[chmod g+rx,u+rwx "#{fetch(deploy_to)}/#{shared_path}/log"]
+  command %[mkdir -p "#{fetch(:deploy_to)}/#{fetch(:current_path)}/log"]
+  command %[chmod g+rx,u+rwx "#{fetch(:deploy_to)}/#{fetch(:current_path)}/log"]
 
-  command! %[mkdir -p "#{fetch(deploy_to)}/#{shared_path}/config"]
-  command! %[chmod g+rx,u+rwx "#{fetch(deploy_to)}/#{shared_path}/config"]
+  command %[mkdir -p "#{fetch(:deploy_to)}/#{fetch(:current_path)}/config"]
+  command %[chmod g+rx,u+rwx "#{fetch(:deploy_to)}/#{fetch(:current_path)}/config"]
 
-  command! %[touch "#{fetch(deploy_to)}/#{shared_path}/config/database.yml"]
-  command  %[echo "-----> Be sure to edit '#{fetch(deploy_to)}/#{shared_path}/config/database.yml'."]
+  command %[touch "#{fetch(:deploy_to)}/#{fetch(:current_path)}/config/database.yml"]
+  command  %[echo "-----> Be sure to edit '#{fetch(:deploy_to)}/#{fetch(:current_path)}/config/database.yml'."]
 
-  command! %[touch "#{fetch(deploy_to)}/#{shared_path}/config/secrets.yml"]
-  command  %[echo "-----> Be sure to edit '#{fetch(deploy_to)}/#{shared_path}/config/secrets.yml'."]
+  command %[touch "#{fetch(:deploy_to)}/#{fetch(:current_path)}/config/secrets.yml"]
+  command  %[echo "-----> Be sure to edit '#{fetch(:deploy_to)}/#{fetch(:current_path)}/config/secrets.yml'."]
 end
 
 desc "Deploys the current version to the server."

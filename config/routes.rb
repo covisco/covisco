@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
 
   devise_for :users
-  get '/' => 'codex#index'
+  # get '/' => 'codex#index'
   get '/events' => 'welcome#events'
 
   resources :codex, only: [:index, :show]
