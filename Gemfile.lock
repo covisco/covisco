@@ -151,6 +151,9 @@ GEM
     treetop (1.4.15)
       polyglot
       polyglot (>= 0.3.1)
+    turbolinks (5.0.1)
+      turbolinks-source (~> 5)
+    turbolinks-source (5.0.0)
     twitter-bootstrap-rails (3.2.2)
       actionpack (>= 3.1)
       execjs (>= 2.2.2, >= 2.2)
@@ -180,6 +183,7 @@ DEPENDENCIES
   rinku
   sass-rails (~> 4.0.3)
   social-buttons (~> 0.3)
+  turbolinks
   twitter-bootstrap-rails
 
 BUNDLED WITH
