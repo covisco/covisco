@@ -88,23 +88,6 @@
                   = link_to "/codex/#{@latest_codex_guest.slug}" do
                     = image_tag @latest_codex_guest.avatar.url(:small)
                     %br= @latest_codex_guest.full_name
-            %h4 Latest Check-ins:
-            %p
-              %span#covisCheckins
-            %h4 What's Happening Soon?
-            %p
-              %span#covisEvents
-              %iframe{:frameborder => "0", :height => "300", :scrolling => "no", :src => "https://www.google.com/calendar/embed?showTitle=0&showNav=0&showDate=0&showPrint=0&showTabs=0&showCalendars=0&showTz=0&mode=AGENDA&height=300&wkst=1&bgcolor=%23ffffff&src=7g80hb5i4h1dqc49g1scmkgl0g%40group.calendar.google.com&color=%23060D5E&ctz=America%2FChicago", :style => " border-width:0 ", :width => "270"}
-              %span{:style => "font-size:12px;"}
-                %a{:href => "/events"} Have your next event here!
-            %h4 What's Happening Now?
-            %img{:alt => "screenshot", :src => "http://local.covisco.com:81/snapshot.cgi?user=x&pwd="}/
-            %div{:style => "margin:0, padding:0; text-align:center; font-size:12px;"}
-              %span{id: 'last_update_time'}
-              %script{:src => "http://local.covisco.com/filemod.php", :type => "text/javascript"}
-              %br Updated every 5 minutes
-            %div{style: 'padding: 15px; text-align: center;'}
-              = link_to image_tag('bitcoin.png'), 'http://bitcoin.org'
       %hr/
       %footer{:style => "text-align:center;"}
         \&copy;
