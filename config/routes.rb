@@ -1,16 +1,16 @@
 Rails.application.routes.draw do
 
   devise_for :users
-  get '/' => 'welcome#index'
+  get '/' => 'codex#index'
   get '/events' => 'welcome#events'
 
   resources :codex, only: [:index, :show]
-  
+
   get '/feed' => 'codex#feed',
         :as => :feed,
         :defaults => { :format => 'rss' }
 
-  root 'welcome#index'
+  root 'codex#index'
 
   namespace :admin do
     get '/', to: 'dashboard#index'
