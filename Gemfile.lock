@@ -172,6 +172,7 @@ DEPENDENCIES
   friendly_id (~> 5.1.0)
   haml-rails
   jquery-rails
+  less-rails
   mina
   paperclip (~> 4.2)
   pg
