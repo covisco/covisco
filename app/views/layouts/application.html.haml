@@ -2,7 +2,7 @@
 %html
   %head
     %title
-      = @video_link.present? ? "CoVis Codex - #{@codex_guest.full_name}" : 'CoVis CoWorking - Omaha, Nebraska'
+      = @video_link.present? ? "CoVis Codex - #{@codex_guest.full_name}" : 'CoVis Community - Omaha, Nebraska'
     = stylesheet_link_tag  'application', media: 'all', 'data-turbolinks-track' => false
     = stylesheet_link_tag 'joystix/joystix.css'
     = stylesheet_link_tag 'http://fonts.googleapis.com/css?family=Open+Sans|Quattrocento'
@@ -39,14 +39,6 @@
     %meta{:content => "http://covisco.com/covisco_block.png", :property => "og:image"}/
     %meta{:content => "Skid Vis", :name => "author"}/
   %body
-    #firstLoad.gaming{:style => "padding:20px;"}
-      %a{:href => "#", :onClick => "showVideo();", :style => "font-size:30px;"}
-        Wondering what coworking is?
-        %br>/
-        click here to watch a short video!
-      %a#dismiss{:href => "#", :onClick => "dismiss();"} dismiss
-    #firstVideo
-      %iframe{:allowFullScreen => "", :frameborder => "0", :height => "360", :mozallowfullscreen => "", :src => "http://player.vimeo.com/video/51794703?title=0&amp;byline=0&amp;portrait=0", :webkitAllowFullScreen => "", :width => "640"}
     .container
       #header.row.nav
         %span.brand
@@ -69,7 +61,7 @@
 
         #myBar.col-sm-3
           %div{:itemscope => "", :itemtype => "http://schema.org/LocalBusiness"}
-            %h4{:itemprop => "name"} CoVis CoWorking
+            %h4{:itemprop => "name"} CoVis Community
             %p{:style => "font-size:12px;"}
               %a{:href => "http://twitter.com/covisco"} covisco
               on Twitter
