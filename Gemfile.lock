@@ -35,6 +35,7 @@ GEM
       uuidtools (~> 2.1)
     bcrypt (3.1.11)
     builder (3.2.3)
+    byebug (9.0.6)
     climate_control (0.1.0)
     cocaine (0.5.8)
       climate_control (>= 0.0.3, < 1.0)
@@ -188,6 +189,7 @@ PLATFORMS
 
 DEPENDENCIES
   aws-sdk (~> 1.5.7)
+  byebug
   coffee-rails (~> 4.0.0)
   devise
   font-awesome-rails
