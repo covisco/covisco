@@ -1,4 +1,5 @@
 source 'https://rubygems.org'
+ruby '2.2.0'
 
 gem 'rails', '4.1.0'
 gem 'pg'
@@ -16,6 +17,8 @@ gem 'two_factor_authentication', git: 'https://github.com/Houdini/two_factor_aut
 # gem 'spring',        group: :development
 group :development do
   gem 'byebug'
+  gem 'ruby-debug-ide'
+  gem 'debase'
 end
 
 gem 'haml-rails'
