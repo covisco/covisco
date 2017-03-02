@@ -8,10 +8,13 @@ gem 'coffee-rails', '~> 4.0.0'
 gem 'therubyracer',  platforms: :ruby
 gem 'jquery-rails'
 gem 'turbolinks'
+
+gem 'two_factor_authentication', git: 'https://github.com/Houdini/two_factor_authentication'
+
 # gem 'jbuilder', '~> 2.0'
 # gem 'sdoc', '~> 0.4.0',          group: :doc
 # gem 'spring',        group: :development
-group :development do 
+group :development do
   gem 'byebug'
 end
 
